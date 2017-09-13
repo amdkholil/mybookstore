@@ -62,21 +62,41 @@ ul.sm li{
 	list-style: none;
 	float: left;
 	margin-top: 6px;
-	margin-right: 6px;
+	margin-right: 10px;
 }
 
 ul.sm li a{
-	padding: 4px 7px 6px 7px;
+	padding: 6px 4px 2px 3px;
 	color: #666;
 	font-size: 11pt;
 }
 
+ul.sm li a:hover{
+	border-bottom:#FFC21D 1px solid;
+	text-decoration: none;
+}
+
 ul.sm li a.aktif{
-	text-decoration: underline;
+	border-bottom:#FFC21D 1px solid; 
 }
 
 label {
 	font-weight: normal;
 	text-align: right;
 	font-size: 11pt;
+}
+
+.notif{
+	display: none;
+	position: fixed;
+	right: 15px;
+	top: 10px;
+	width: 350px;
+	padding: 5px 0;
+	background-color: #FFFCAC;
+	border-radius: 6px;
+	border:1px solid #fff;
+	text-align: center;
+	box-shadow: 0 0 6px #FFEA5A;
+	text-shadow: 0 0 3px #FF5;						
 }

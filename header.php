@@ -1,15 +1,13 @@
-<?php
-require 'lib/fungsi.php';
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Toko Buku Bersama</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="style/default.css">
-	<script type="text/javascript" src=""></script>
+	<script type="text/javascript" src="style/jquery-3.2.1.js"></script>
 </head>
 <body>
+	<?php require 'lib/fungsi.php'; ?>
 	<div class="container-fluid">
 		<div class="row header">
 			<div class="col-sm-12">
@@ -37,11 +35,11 @@ require 'lib/fungsi.php';
 					</a>
 				</li>
 				<li>
-					<a href="#"<?php cek($m,"pelanggan"," class=aktif"); ?>>
+					<a href="pelanggan.php"<?php cek($m,"pelanggan"," class=aktif"); ?>>
 						Pelanggan
 					</a></li>
 				<li>
-					<a href="#"<?php cek($m,"pengaturan"," class=aktif"); ?>>
+					<a href="pengaturan.php"<?php cek($m,"pengaturan"," class=aktif"); ?>>
 						Pengaturan
 					</a>
 				</li>

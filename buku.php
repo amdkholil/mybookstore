@@ -1,4 +1,5 @@
 <?php
+session_start();
 $m="buku";
 if(isset($_GET['sm'])){
 	$sm=$_GET['sm'];
@@ -7,13 +8,15 @@ else{
 	$sm="0";
 }
 include 'header.php';
+
+notif();
 ?>
 <div class="row">
 	<div class="col-sm-12">
 		<ul class="sm">
 			<li>
 				<a href="buku.php"<?php cek($sm,"0"," class=aktif") ?>>
-					Daftar Data Buku
+					Data Buku
 				</a>
 			</li>
 			<li>
@@ -29,9 +32,15 @@ include 'header.php';
 		</ul>
 	</div>
 </div>
-<?php
-if($sm=="tambah_data"){
-?>
+
+<?php if($sm=="0"){ ?>
+<div class="row" style="margin-top: 50px">
+	<div class="col-sm-12">
+		<table></table>
+	</div>
+</div>
+
+<?php } if($sm=="tambah_data"){ ?>
 <div class="row" style="margin-top: 50px;">
 	<div class="col-sm-12">
 	<form method="post" action="lib/proses.php" class="form-horizontal">
@@ -69,6 +78,7 @@ if($sm=="tambah_data"){
 			<label class="control-label col-sm-2"></label>
 			<div class="col-sm-3">
 				<input type="submit" name="simpan_buku" value="Simpan" class="btn btn-sm btn-warning">
+				<input type="reset" value="Reset" class="btn btn-sm btn-default">
 			</div>
 		</div>
 	</form>
