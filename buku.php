@@ -30,7 +30,7 @@ include 'header.php';
 	</div>
 </div>
 <?php
-if($sm=="tambah_stok"){
+if($sm=="tambah_data"){
 ?>
 <div class="row" style="margin-top: 50px;">
 	<div class="col-sm-12">
@@ -60,6 +60,12 @@ if($sm=="tambah_stok"){
 			</div>
 		</div>
 		<div class="form-group">
+			<label class="control-label col-sm-2">Harga Jual :</label>
+			<div class="col-sm-2">
+				<input type="text" name="harga" class="input-sm form-control">
+			</div>
+		</div>
+		<div class="form-group">
 			<label class="control-label col-sm-2"></label>
 			<div class="col-sm-3">
 				<input type="submit" name="simpan_buku" value="Simpan" class="btn btn-sm btn-warning">
@@ -72,6 +78,39 @@ if($sm=="tambah_stok"){
 }
 ?>
 
-
-
+<?php
+if($sm=="tambah_stok"){
+?>
+<div class="row" style="margin-top:50px;">
+	<div class="col-sm-12">
+		<form action="lib/proses.php" method="post" class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2">Kode Buku :</label>
+				<div class="col-sm-2">
+					<input type="text" name="kd_barang" class="form-control input-sm" autofocus>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2">Tanggal :</label>
+				<div class="col-sm-2">
+					<input type="text" name="tanggal" class="form-control input-sm">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2">Jumlah :</label>
+				<div class="col-sm-2">
+					<input type="text" name="qty" class="form-control input-sm">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2"></label>
+				<div class="col-sm-5">
+					<input type="submit" name="simpan_stok" value="simpan" class="btn btn-sm btn-warning">
+					<input type="reset" value="Reset" class="btn btn-sm btn-default">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<?php } ?>
 <?php include 'footer.php'; ?>
