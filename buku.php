@@ -36,10 +36,46 @@ notif();
 <?php if($sm=="0"){ ?>
 <div class="row" style="margin-top: 50px">
 	<div class="col-sm-12">
-		<table></table>
+		<table id="tabel" class="table table-striped table-bordered" cellspacing="0" style="background-color: #fff;">
+			<thead>
+				<tr>
+					<th style="width: 200px;">Kode Buku</th>
+					<th>Judul Buku</th>
+					<th>Pengarang</th>
+					<th>Tahun</th>
+					<th>Harga</th>
+					<th>Pilihan</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
-
+<script>
+	$(document).ready(function() {
+		$('#tabel').DataTable({
+			'info':false,
+			'lengthChange':false
+		});
+	});
+</script>
 <?php } if($sm=="tambah_data"){ ?>
 <div class="row" style="margin-top: 50px;">
 	<div class="col-sm-12">
