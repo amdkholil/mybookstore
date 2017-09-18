@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+require_once 'lib/config.php';
 $m="pelanggan";
 include 'header.php';
 if(isset($_GET['sm'])){
@@ -27,7 +28,37 @@ else{
 	</div>
 </div>
 
-<?php if($sm=="tambah_pelanggan"){ //form tambah data pelanggan ?>
+<? if($sm==0){ ?>
+<div class="row" style="margin-top: 30px;">
+	<div class="col-sm-12">
+		<table id="tabel" class="table table-hover table-bordered table-striped" style="background-color: #fff">
+			<thead>
+				<tr>
+					<th>Kode Pelanggan</th>
+					<th>Nama Pelanggan</th>
+					<th>Alamat</th>
+					<th>Pilihan</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				$q=$mysqli->query("select * from tbl_pelanggan");
+				while($d=$q->fetch_assoc()) {
+				?>
+				<tr>
+					<td><?php echo $d['kd_pelanggan']; ?></td>
+					<td><?php echo $d['nama']; ?></td>
+					<td><?php echo $d['alamat']; ?></td>
+					<td>
+						<a href="" class="btn btn-sm btn-warning">Ubah</a>
+						<a href="" class="btn btn-sm btn-danger">Hapus</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+</div>
+<?php } if($sm=="tambah_pelanggan"){ //form tambah data pelanggan ?>
 <div class="row" style="margin-top: 50px;">
 	<div class="col-sm-12">
 		<form method="post" action="lib/proses.php" class="form-horizontal">

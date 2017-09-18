@@ -4,8 +4,10 @@
 	<title>Toko Buku Bersama</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="style/default.css">
+	<link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="datatables/DataTables-1.10.16/css/dataTables.bootstrap.css">
 	<script type="text/javascript" src="style/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="style/jquery-ui.js"></script>
 	<script type="text/javascript" src="datatables/datatables.js"></script>
 	<script type="text/javascript" src="datatables/DataTables-1.10.16/js/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="datatables/DataTables-1.10.16/js/dataTables.bootstrap.js"></script>
