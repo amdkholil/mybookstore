@@ -34,7 +34,7 @@ notif();
 	</div>
 </div>
 
-<?php if($sm=="0" and !isset($_GET['ubah'])){ ?>
+<?php if($sm=="0" and !isset($_GET['ubah'])) { ?>
 <div class="row" style="margin-top: 30px">
 	<div class="col-sm-12">
 		<table id="tabel" class="table table-striped table-bordered table-hover" cellspacing="0" style="background-color: #fff;">
@@ -63,7 +63,7 @@ notif();
 								<td style="text-align:center;"><?php echo stok($d['kd_buku']); ?></td>
 								<td>
 									<a href="?ubah=<?php echo $d['kd_buku']; ?>" class="btn btn-sm btn-warning">Ubah</a>
-									<a href="" class="btn btn-sm btn-danger">Hapus</a>
+									<a href="lib/proses.php?hapus_buku=<?php echo $d['kd_buku']; ?>" class="btn btn-sm btn-danger" onclick="return hapus();">Hapus</a>
 							</tr>
 					<?php
 						}
@@ -193,7 +193,7 @@ notif();
 		<div class="form-group">
 			<label class="control-label col-sm-2"></label>
 			<div class="col-sm-3">
-				<input type="submit" name="simpan_buku" value="Simpan" class="btn btn-sm btn-warning">
+				<input type="submit" name="ubah_buku" value="Simpan" class="btn btn-sm btn-warning">
 				<input type="button" value="Kembali" class="btn btn-sm btn-default" onclick="javascript:history.go(-1)">
 			</div>
 		</div>

@@ -45,6 +45,8 @@ function stok($kd_buku){
 	//hitung stok
 	return $qty1-$qty2;
 }
+
+
 ?>
 
 <!---------------------------------------------------------------------------------->
@@ -74,5 +76,13 @@ $(document).ready(function() {
 		"lengthMenu": [[10], [10]]
 	});
 });
+
+function hapus(){
+    if(confirm('Hapus data?')){
+    	return true;
+    }else{
+    	return false;    
+    }
+}
 
 </script>
