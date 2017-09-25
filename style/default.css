@@ -100,3 +100,17 @@ label {
 	box-shadow: 0 0 6px #FFEA5A;
 	text-shadow: 0 0 3px #FF5;						
 }
+
+label{
+    text-align: left;
+}
+
+.box {
+    background-color:aliceblue;
+    padding: 15px 10px 10px 10px;
+}
+
+.top{
+    text-align: center;
+    margin: 0px 5px 0px 10px;
+}

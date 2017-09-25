@@ -85,4 +85,18 @@ if(isset($_GET['hapus_pelanggan'])){
 	$_SESSION['notif']="Data berhasil dihapus!";
 	header("Location: ../pelanggan.php");
 }
+
+if(isset($_POST['simpan_transaksi'])){
+    $kd_buku=$_POST['kd_buku'];
+    $harga=$_POST['harga'];
+    foreach($kd_buku as $kodebuku and $harga as $hrg){
+        if(strlen($kodebuku)>0){
+            echo $kodebuku.$hrg."<br>";
+        }
+        else{
+            echo "gagal";
+        }
+    }
+}
+
 ?>
