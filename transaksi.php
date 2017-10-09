@@ -38,22 +38,27 @@ notif();
                 </div>
                 <label class="control-label col-sm-2">Kode Pelanggan :</label>
                 <div class="col-sm-2">
-                    <input type="text" name="kd_pelanggan" class="form-control input-sm" autofocus>
+                    <input type="text" name="kd_pelanggan" class="form-control input-sm" id="kd_pelanggan" autofocus>
                 </div>
             </div>
-            <div style="border: #999 1px dashed; margin-bottom: 18px;"></div>
+            <div style="border-bottom: #999 2px dashed; margin:25px 0px 7px 0px;"></div>
             <div class="form-group top">
+                <div class="col-sm-1"><span class="glyphicon glyphicon-edit"></div>
                 <div class="col-sm-2">Kode Buku</div>
                 <div class="col-sm-3">Judul Buku</div>
                 <div class="col-sm-2">Harga</div>
                 <div class="col-sm-1">Qty</div>
-                <div class="col-sm-3">Total Harga</div>
-                <div class="col-sm-1">
-                </div>
+                <div class="col-sm-2">Total Harga</div>
             </div>
-            <div class="form-group ctn">
+            <div style="border-bottom: #999 1px dashed; margin: 7px 30px 15px 5px;"></div>
+            <div class="form-group">
+            	<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
+            		<div class="btn btn-sm btn-default add-more">
+            			<span class="glyphicon glyphicon-plus"></span>
+            		</div>
+            	</div>
                 <div class="col-sm-2">
-                    <input type="text" name="kd_buku[]" class="form-control input-sm"> 
+                    <input type="text" name="kd_buku[]" class="form-control input-sm" id="kd_buku"> 
                 </div>
                 <div class="col-sm-3">
                     <input type="text" name="judul_buku" class="form-control input-sm">
@@ -64,18 +69,33 @@ notif();
                 <div class="col-sm-1">
                     <input type="text" name="qty[]" class="form-control input-sm">
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <input type="text" name="tot_harga[]" class="form-control input-sm">
                 </div>
             </div>
             <div class="form-group">
+            	<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
+            		<div class="btn btn-sm btn-danger remove">
+            			<span class="glyphicon glyphicon-remove"></span>
+            		</div>
+            	</div>
                 <div class="col-sm-2">
-                    <a class="add-more">
-                        <span class="glyphicon glyphicon-plus" style="padding: 3px; border: 1px solid #000; border-radius: 3px;"></span>
-                    </a>
+                    <input type="text" name="kd_buku[]" class="form-control input-sm" id="kd_buku"> 
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="judul_buku" class="form-control input-sm">
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" name="harga[]" class="form-control input-sm">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" name="qty[]" class="form-control input-sm">
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" name="tot_harga[]" class="form-control input-sm">
                 </div>
             </div>
-            <div style="border: #999 1px dashed; margin-bottom: 18px; margin-top: 10px"></div>
+            <div class="ctn" style="border-bottom: #999 2px dashed; margin-bottom: 18px; margin-top: 20px"></div>
             <div class="form-group">
                 <div class="col-sm-2">
                     <input type="submit" name="simpan_transaksi" value="Simpan Transaksi" class="btn btn-sm btn-warning">
@@ -89,11 +109,16 @@ notif();
 	</div>
 </div>
 <div class="copy hide">
-    <div class="form-group">
+	<div class="form-group">
+		<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
+ 			<div class="btn btn-sm btn-danger remove">
+   				<span class="glyphicon glyphicon-remove"></span>
+   			</div>
+   		</div>
         <div class="col-sm-2">
             <input type="text" name="kd_buku[]" class="form-control input-sm"> 
         </div>
-        <div class="col-sm-3">
+    	<div class="col-sm-3">
             <input type="text" name="judul_buku" class="form-control input-sm">
         </div>
         <div class="col-sm-2">
@@ -102,11 +127,8 @@ notif();
         <div class="col-sm-1">
             <input type="text" name="qty[]" class="form-control input-sm">
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <input type="text" name="tot_harga[]" class="form-control input-sm">
-        </div>
-        <div class="col-sm-1">
-            <a class="btn btn-sm btn-danger" id="remove"><span class="glyphicon glyphicon-remove"></span></a>
         </div>
     </div>
 </div>
@@ -114,9 +136,9 @@ notif();
     $(document).ready(function() {
       $(".add-more").click(function(){ 
           var html = $(".copy").html();
-          $(".ctn").after(html);
+          $(".ctn").before(html);
       });
-      $("body").on("click","#remove",function(){ 
+      $("body").on("click",".remove",function(){ 
           $(this).parents(".form-group").remove();
       });
     });

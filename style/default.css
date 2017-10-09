@@ -114,3 +114,7 @@ label{
     text-align: center;
     margin: 0px 5px 0px 10px;
 }
+
+input:hover{
+	background-color: #fff;
+}

@@ -89,14 +89,12 @@ if(isset($_GET['hapus_pelanggan'])){
 if(isset($_POST['simpan_transaksi'])){
     $kd_buku=$_POST['kd_buku'];
     $harga=$_POST['harga'];
-    foreach($kd_buku as $kodebuku and $harga as $hrg){
-        if(strlen($kodebuku)>0){
-            echo $kodebuku.$hrg."<br>";
-        }
-        else{
-            echo "gagal";
-        }
+    for($x=0;$x<count($kd_buku);$x++){
+    	echo "<br>".$x." ".$harga[$x]." ".$kd_buku[$x];
     }
 }
 
+
+$_SESSION['notif']="Data berhasil disimpan!";
+		echo "<script>javascript:history.go(-1)</script>";
 ?>

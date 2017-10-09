@@ -30,6 +30,17 @@ function kd_buku(){
 	return $result;
 }
 
+function kd_pelanggan(){
+	require 'config.php';
+	$kd_pelanggan=array();
+	$q=$mysqli->query("select * from tbl_pelanggan");
+	while ($d=$q->fetch_assoc()) {
+		$kd_pelanggan[]=$d['kd_pelanggan'];
+	}
+	$result=json_encode($kd_pelanggan);
+	return $result;
+}
+
 function stok($kd_buku){
 	require 'config.php';
 	//buku masuk
@@ -54,27 +65,40 @@ function stok($kd_buku){
 <!---------------------------------------------------------------------------------->
 <script type="text/javascript">
 
-$(document).ready(function(){setTimeout(function(){$(".notif").fadeIn('fast');}, 500);});
-setTimeout(function(){$(".notif").fadeOut('slow');}, 3000);
-
 $(document).ready(function(){
+
+	//notifikasi
+	setTimeout(function(){
+		$(".notif").fadeIn('fast');
+	}, 500);
+	setTimeout(function(){
+		$(".notif").fadeOut('slow');
+	}, 3000);
+
+	//datepicker
 	$("#tanggal").datepicker({
 		dateFormat: 'yy-mm-dd'
-	});
-});
+	});	
 
-$(document).ready(function(){
+	//autocomplit kode buku
 	var kd_buku= <?php echo kd_buku(); ?>;
 	$("#kd_buku").autocomplete({
 		source : kd_buku
 	});
-});
-$(document).ready(function() {
+
+	//autocomplit kode pelanggan
+	var kd_pelanggan= <?php echo kd_pelanggan(); ?>;
+	$("#kd_pelanggan").autocomplete({
+		source : kd_pelanggan
+	});
+
+	//datatable
 	$('#tabel').DataTable({
 		'info':false,
 		'lengthChange':false,
 		"lengthMenu": [[10], [10]]
 	});
+
 });
 
 function hapus(){
