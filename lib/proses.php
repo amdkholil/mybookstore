@@ -88,13 +88,20 @@ if(isset($_GET['hapus_pelanggan'])){
 
 if(isset($_POST['simpan_transaksi'])){
     $kd_buku=$_POST['kd_buku'];
+		$tanggal=$_POST['tanggal'];
     $harga=$_POST['harga'];
+		$q1=$mysqli->query("insert into tbl_transaksi values('','$kd_buku','$tanggal')");
+		if ($q1) {
+			$q2=$mysqli->query("select kd_transaksi from tbl_transaksi order by kd_transaksi desc limit 1");
+			$kd_transaksi=$q2->fetch_assoc();
+		}
     for($x=0;$x<count($kd_buku);$x++){
-    	echo "<br>".$x." ".$harga[$x]." ".$kd_buku[$x];
+			$q2=$mysqli->query("insert into tbl_buku_keluar values('',)")
     }
+		$_SESSION['notif']="Data berhasil disimpan!";
+		header("Location:../transaksi.php");
 }
 
 
-$_SESSION['notif']="Data berhasil disimpan!";
-		header("Location:../transaksi.php");
+
 ?>

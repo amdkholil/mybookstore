@@ -58,13 +58,13 @@ notif();
             		</div>
             	</div>
                 <div class="col-sm-2">
-                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku">
+                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku" required>
                 </div>
                 <div class="col-sm-3">
                     <input type="text" name="judul_buku" class="form-control input-sm">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" name="harga[]" class="form-control input-sm">
+                    <input type="text" name="harga[]" class="form-control input-sm" required>
                 </div>
                 <div class="col-sm-1">
                     <input type="text" name="qty[]" class="form-control input-sm">
@@ -80,13 +80,13 @@ notif();
             		</div>
             	</div>
                 <div class="col-sm-2">
-                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku">
+                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku" required>
                 </div>
                 <div class="col-sm-3">
                     <input type="text" name="judul_buku" class="form-control input-sm">
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" name="harga[]" class="form-control input-sm">
+                    <input type="text" name="harga[]" class="form-control input-sm" required>
                 </div>
                 <div class="col-sm-1">
                     <input type="text" name="qty[]" class="form-control input-sm">
@@ -116,13 +116,13 @@ notif();
    			</div>
    	</div>
     <div class="col-sm-2">
-        <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku">
+        <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku" required>
     </div>
 		<div class="col-sm-3">
         <input type="text" name="judul_buku" class="form-control input-sm">
     </div>
     <div class="col-sm-2">
-        <input type="text" name="harga[]" class="form-control input-sm">
+        <input type="text" name="harga[]" class="form-control input-sm" required>
     </div>
     <div class="col-sm-1">
         <input type="text" name="qty[]" class="form-control input-sm">
