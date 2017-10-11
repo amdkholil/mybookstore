@@ -53,12 +53,12 @@ notif();
             <div style="border-bottom: #999 1px dashed; margin: 7px 30px 15px 5px;"></div>
             <div class="form-group">
             	<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
-            		<div class="btn btn-sm btn-default add-more">
+            		<div class="btn btn-sm btn-default add-more" data-toggle="tooltip" title="Tambah">
             			<span class="glyphicon glyphicon-plus"></span>
             		</div>
             	</div>
                 <div class="col-sm-2">
-                    <input type="text" name="kd_buku[]" class="form-control input-sm" id="kd_buku"> 
+                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku">
                 </div>
                 <div class="col-sm-3">
                     <input type="text" name="judul_buku" class="form-control input-sm">
@@ -75,12 +75,12 @@ notif();
             </div>
             <div class="form-group">
             	<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
-            		<div class="btn btn-sm btn-danger remove">
+            		<div class="btn btn-sm btn-danger remove" data-toggle="tooltip" title="Hapus!">
             			<span class="glyphicon glyphicon-remove"></span>
             		</div>
             	</div>
                 <div class="col-sm-2">
-                    <input type="text" name="kd_buku[]" class="form-control input-sm" id="kd_buku"> 
+                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku">
                 </div>
                 <div class="col-sm-3">
                     <input type="text" name="judul_buku" class="form-control input-sm">
@@ -111,35 +111,58 @@ notif();
 <div class="copy hide">
 	<div class="form-group">
 		<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
- 			<div class="btn btn-sm btn-danger remove">
+ 				<div class="btn btn-sm btn-danger remove" data-toggle="tooltip" title="Hapus">
    				<span class="glyphicon glyphicon-remove"></span>
    			</div>
-   		</div>
-        <div class="col-sm-2">
-            <input type="text" name="kd_buku[]" class="form-control input-sm"> 
-        </div>
-    	<div class="col-sm-3">
-            <input type="text" name="judul_buku" class="form-control input-sm">
-        </div>
-        <div class="col-sm-2">
-            <input type="text" name="harga[]" class="form-control input-sm">
-        </div>
-        <div class="col-sm-1">
-            <input type="text" name="qty[]" class="form-control input-sm">
-        </div>
-        <div class="col-sm-2">
-            <input type="text" name="tot_harga[]" class="form-control input-sm">
-        </div>
+   	</div>
+    <div class="col-sm-2">
+        <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku">
+    </div>
+		<div class="col-sm-3">
+        <input type="text" name="judul_buku" class="form-control input-sm">
+    </div>
+    <div class="col-sm-2">
+        <input type="text" name="harga[]" class="form-control input-sm">
+    </div>
+    <div class="col-sm-1">
+        <input type="text" name="qty[]" class="form-control input-sm">
+    </div>
+    <div class="col-sm-2">
+        <input type="text" name="tot_harga[]" class="form-control input-sm">
+    </div>
     </div>
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-      $(".add-more").click(function(){ 
-          var html = $(".copy").html();
+			var x=1;
+			function increment() {
+				i +=1;
+			}
+			$('[data-toggle="tooltip"]').tooltip();
+      $(".add-more").click(function(){
+				if (x<=4) {
+					var html = $(".copy").html();
           $(".ctn").before(html);
+					$(".kd_buku")
+						.attr("id",function () {
+							return "kd_buku" + x;
+						});
+					x++;
+				}
+				if(x==4) {
+					$(".add-more").attr({
+						"data-toggle":"tooltip",
+						"title":"Maks"
+					});
+				}
       });
-      $("body").on("click",".remove",function(){ 
+      $("body").on("click",".remove",function(){
           $(this).parents(".form-group").remove();
+					x--;
+					$(".add-more").attr({
+						"data-toggle":"tooltip",
+						"title":"Tambah"
+					});
       });
     });
 </script>

@@ -78,13 +78,15 @@ $(document).ready(function(){
 	//datepicker
 	$("#tanggal").datepicker({
 		dateFormat: 'yy-mm-dd'
-	});	
+	});
 
 	//autocomplit kode buku
 	var kd_buku= <?php echo kd_buku(); ?>;
-	$("#kd_buku").autocomplete({
-		source : kd_buku
-	});
+	$("#kd_buku").autocomplete({ source : kd_buku });
+	$("#kd_buku2").autocomplete({ source : kd_buku });
+	$("#kd_buku3").autocomplete({ source : kd_buku });
+	$("#kd_buku4").autocomplete({ source : kd_buku });
+	$("#kd_buku5").autocomplete({ source : kd_buku });
 
 	//autocomplit kode pelanggan
 	var kd_pelanggan= <?php echo kd_pelanggan(); ?>;
@@ -105,7 +107,7 @@ function hapus(){
     if(confirm('Hapus data?')){
     	return true;
     }else{
-    	return false;    
+    	return false;
     }
 }
 

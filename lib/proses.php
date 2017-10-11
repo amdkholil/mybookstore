@@ -96,5 +96,5 @@ if(isset($_POST['simpan_transaksi'])){
 
 
 $_SESSION['notif']="Data berhasil disimpan!";
-		echo "<script>javascript:history.go(-1)</script>";
+		header("Location:../transaksi.php");
 ?>
