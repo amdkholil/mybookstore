@@ -51,50 +51,35 @@ notif();
                 <div class="col-sm-2">Total Harga</div>
             </div>
             <div style="border-bottom: #999 1px dashed; margin: 7px 30px 15px 5px;"></div>
-            <div class="form-group">
-            	<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
-            		<div class="btn btn-sm btn-default add-more" data-toggle="tooltip" title="Tambah">
-            			<span class="glyphicon glyphicon-plus"></span>
-            		</div>
-            	</div>
-                <div class="col-sm-2">
-                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku" required>
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" name="judul_buku" class="form-control input-sm">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" name="harga[]" class="form-control input-sm" required>
-                </div>
-                <div class="col-sm-1">
-                    <input type="text" name="qty[]" class="form-control input-sm">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" name="tot_harga[]" class="form-control input-sm">
-                </div>
-            </div>
-            <div class="form-group">
-            	<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
-            		<div class="btn btn-sm btn-danger remove" data-toggle="tooltip" title="Hapus!">
-            			<span class="glyphicon glyphicon-remove"></span>
-            		</div>
-            	</div>
-                <div class="col-sm-2">
-                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku" required>
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" name="judul_buku" class="form-control input-sm">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" name="harga[]" class="form-control input-sm" required>
-                </div>
-                <div class="col-sm-1">
-                    <input type="text" name="qty[]" class="form-control input-sm">
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" name="tot_harga[]" class="form-control input-sm">
-                </div>
-            </div>
+						<div data-dynamic-form>
+							<div data-dynamic-form-template="multy">
+								<div class="form-group">
+		            	<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
+		            		<btn class="btn btn-sm btn-default" data-toggle="tooltip" title="Tambah" data-dynamic-form-add>
+		            			<span class="glyphicon glyphicon-plus"></span>
+		            		</btn>
+		            		<btn class="btn btn-sm btn-danger" data-toggle="tooltip" title="Hapus" data-dynamic-form-remove>
+		            			<span class="glyphicon glyphicon-remove"></span>
+		            		</btn>
+		            	</div>
+	                <div class="col-sm-2">
+	                    <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku[ID]" data-dynamic-form-input-id-template="ID" list="kdbuku" required>
+	                </div>
+	                <div class="col-sm-3">
+	                    <input type="text" name="judul_buku" class="form-control input-sm">
+	                </div>
+	                <div class="col-sm-2">
+	                    <input type="text" name="harga[]" class="form-control input-sm" required>
+	                </div>
+	                <div class="col-sm-1">
+	                    <input type="text" name="qty[]" class="form-control input-sm">
+	                </div>
+	                <div class="col-sm-2">
+	                    <input type="text" name="tot_harga[]" class="form-control input-sm">
+	                </div>
+								</div>
+							</div>
+						</div>
             <div class="ctn" style="border-bottom: #999 2px dashed; margin-bottom: 18px; margin-top: 20px"></div>
             <div class="form-group">
                 <div class="col-sm-2">
@@ -108,63 +93,14 @@ notif();
         </form>
 	</div>
 </div>
-<div class="copy hide">
-	<div class="form-group">
-		<div class="col-sm-1" style="text-align: center;vertical-align: middle;">
- 				<div class="btn btn-sm btn-danger remove" data-toggle="tooltip" title="Hapus">
-   				<span class="glyphicon glyphicon-remove"></span>
-   			</div>
-   	</div>
-    <div class="col-sm-2">
-        <input type="text" name="kd_buku[]" class="form-control input-sm kd_buku" id="kd_buku" required>
-    </div>
-		<div class="col-sm-3">
-        <input type="text" name="judul_buku" class="form-control input-sm">
-    </div>
-    <div class="col-sm-2">
-        <input type="text" name="harga[]" class="form-control input-sm" required>
-    </div>
-    <div class="col-sm-1">
-        <input type="text" name="qty[]" class="form-control input-sm">
-    </div>
-    <div class="col-sm-2">
-        <input type="text" name="tot_harga[]" class="form-control input-sm">
-    </div>
-    </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function() {
-			var x=1;
-			function increment() {
-				i +=1;
-			}
-			$('[data-toggle="tooltip"]').tooltip();
-      $(".add-more").click(function(){
-				if (x<=4) {
-					var html = $(".copy").html();
-          $(".ctn").before(html);
-					$(".kd_buku")
-						.attr("id",function () {
-							return "kd_buku" + x;
-						});
-					x++;
-				}
-				if(x==4) {
-					$(".add-more").attr({
-						"data-toggle":"tooltip",
-						"title":"Maks"
-					});
-				}
-      });
-      $("body").on("click",".remove",function(){
-          $(this).parents(".form-group").remove();
-					x--;
-					$(".add-more").attr({
-						"data-toggle":"tooltip",
-						"title":"Tambah"
-					});
-      });
+
+<script type="text/javascript" src="style/dynamic_forms.min.js"> </script>
+<script>
+    $(document).ready(function () {
+        var dynamicForms = new DynamicForms();
+        dynamicForms.automaticallySetupForm();
     });
 </script>
+<datalist id="kdbuku"></datalist>
 
 <?php include 'footer.php'; ?>

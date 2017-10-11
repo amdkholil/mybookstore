@@ -57,7 +57,6 @@ function stok($kd_buku){
 	return $qty1-$qty2;
 }
 
-
 ?>
 
 <!---------------------------------------------------------------------------------->
@@ -83,10 +82,10 @@ $(document).ready(function(){
 	//autocomplit kode buku
 	var kd_buku= <?php echo kd_buku(); ?>;
 	$("#kd_buku").autocomplete({ source : kd_buku });
-	$("#kd_buku2").autocomplete({ source : kd_buku });
-	$("#kd_buku3").autocomplete({ source : kd_buku });
-	$("#kd_buku4").autocomplete({ source : kd_buku });
-	$("#kd_buku5").autocomplete({ source : kd_buku });
+	for (var i = 0; i < kd_buku.length; i++) {
+    $('#kdbuku').append("<option value='" + kd_buku[i] + "'>");
+	}
+
 
 	//autocomplit kode pelanggan
 	var kd_pelanggan= <?php echo kd_pelanggan(); ?>;
@@ -112,3 +111,4 @@ function hapus(){
 }
 
 </script>
+<datalist id="kdbuku"></datalist>
